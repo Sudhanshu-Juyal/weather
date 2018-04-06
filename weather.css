@@ -1,0 +1,61 @@
+.container-fluid
+{
+	background: url(wind.jpg)  no-repeat center center fixed;
+	height:100vh;
+	-webkit background-size: cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+	position: relative;
+
+}
+
+.btn
+{
+	position: relative;
+	left:650px;
+	top:150px;
+}
+.test ul
+{
+	list-style: none;
+}
+#test
+{
+	position:relative;
+	top:200px;
+	left:50px;
+	color:white;
+	background:rgba(128,128,128,0.3);
+    padding:30px;
+	
+
+}
+
+.di
+{
+	padding-top: 40px;
+	padding-right:400px;
+	padding-left:300px;
+	
+}
+li
+{
+	list-style: none;
+}
+h1
+{
+	position: relative;
+	top:70px;
+	color:white;
+}
+#id
+{
+	display:none;
+}
+.far
+{
+	position:relative;
+	height:.3px;
+	width: .3px;
+}

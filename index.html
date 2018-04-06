@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather App</title>
+	<link rel="stylesheet" href="weather.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+	<h1 class="text-center">Weather App<i class="fas fa-cloud"></i>
+</h1>
+<button id="button" class=" btn btn-default btn-primary"><i class="fas fa-cloud"></i>Check</button>
+<div class="di">
+<div id="test"></div>
+</div>
+</div>
+<script>
+	document.getElementById('button').addEventListener('click',test);
+
+	function test()
+	{
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET','https://fcc-weather-api.glitch.me/api/current?lat=35&lon=139',true);
+		xhr.onload=function()
+		{
+			if(this.status == 200)
+			{
+				var test = JSON.parse(this.responseText);
+				var output= ' ';
+				output+='<ul>'+
+				'<li style="color:white">Temperature: ' +test.main.temp+ ' C'+ '</li>'+
+				'<li style="color:white">Humidity: ' +test.main.humidity+ '</li>'+
+				'<li style="color:white">Wind: ' +test.wind.speed+ ' mph'+ '</li>'+
+				'<li style="color:white">Minimum Temperature: ' +test.main.temp_min+ '</li>'+
+				'<li style="color:white">Longitude: ' +test.coord.lon+ '</li>'+
+				'<li style="color:white">Latitude: ' +test.coord.lat+ '</li>'+
+'</ul>';
+document.getElementById('test').innerHTML=output;
+			}
+		}
+		xhr.send();
+	}
+
+
+</script>
+</body>
+</html>
